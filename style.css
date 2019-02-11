@@ -1,0 +1,484 @@
+/* TYPOGRAPHY */
+html {
+    font-family: arial, sans-serif;
+}
+
+
+/* ALIGN MAIN DIVS */
+
+/* TOP */
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_left_column,
+.add_term_information_container {
+    width: 20%;
+}
+
+.title {
+    width: 60%;
+    text-align: center;
+}
+
+/* UPDATE TERM FORM */
+.add_term_information_container {
+    box-sizing: border-box;
+    text-align: right;
+    padding-right: 5%;
+}
+
+.update_term_form {
+    border: 1px hidden #617004;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-left: 30%;
+    float: left;
+}
+
+.update_term_form fieldset {
+    border: 0;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.update_term_form input {
+    border: thin solid #7D9105;
+    border-radius: 5px;
+    font: normal normal normal 16px/1.4 Arial;
+    margin: 0.5px;
+    text-align: center;
+}
+
+.term_input {
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.term_input label {
+    display: block;
+    font-size: 16px;
+}
+
+#current_date_input {
+    font-family: arial, sans-serif;
+    font-size: 16px;
+}
+
+.term_input_button {
+    color: #FFFFFF;
+    background: linear-gradient(#617004, #7D9105);
+    border: 0;
+    border-radius: 10px;
+    padding: 2% 6%;
+}
+
+/* COURSE CONTAINER */
+
+.user_course_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1%;
+}
+
+.add_course_form_container {
+    width: 45%;
+}
+
+.added_courses_container {
+    width: 55%;
+}
+
+
+/* ADD COURSE FORM */
+
+.add_course_form {
+    border: 1px solid #617004;
+    border-radius: 25px;
+    padding: 1%;
+    width: 100%;
+}
+
+.add_course_form h1 {
+    text-align: center;
+    margin: 1%;
+}
+
+.add_course_form h2 {
+    margin: 1% 0 0 2%;
+}
+
+.add_course_form fieldset {
+    border: 1px solid #617004;
+    border-radius: 15px;
+    margin-top: 0px;
+}
+
+.add_course_form label {
+    white-space: nowrap;
+}
+
+.add_course_form span {
+    display: block;
+    overflow: hidden;
+    padding: 0 6px 0 0;
+}
+
+.add_course_form input {
+    border: thin solid #7D9105;
+    border-radius: 5px;
+    font: normal normal normal 16px/1.4 Arial;
+    margin: 0.5px;
+    width: 98%;
+}
+
+.course_name_number_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course_name_container {
+    width: 60%;
+}
+
+.course_number_container {
+    width: 38%;
+}
+
+.faculty_department {
+    display: flex;
+    justify-content: space-between;
+}
+
+.faculty_container,
+.department_container {
+    width: 48%;
+}
+
+.mode_of_instruction_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mode_of_instruction_container input {
+    width: auto;
+    margin: 2px;
+}
+
+.mode {
+    display: inline-flex;
+    align-items: center;
+}
+
+.other_mode {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+
+.other_mode input {
+    width: auto;
+    margin: 2px;
+}
+
+.other_mode span {
+    display: inline-flex;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    margin-left: 1%;
+}
+
+#other_course_type_input {
+    width: 100%;
+}
+
+.course_duration_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.start_date_container,
+.end_date_container {
+    width: 48%;
+}
+
+.day_time_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.day_time_container input {
+    width: auto;
+    margin: 2px;
+}
+
+.add_days,
+.add_time {
+    width: auto;
+}
+
+.location_fieldset span {
+    padding: 0;
+}
+
+.course_color_fieldset {
+    padding: 0;
+}
+
+.add_color {
+    width: 15%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #7D9105;
+    padding: 5px;
+    margin: 1px;
+}
+
+.add_color_selected {
+    width: 15%;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 5px highlight;
+    padding: 5px;
+    margin: 1px;
+}
+
+.colors_1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 2% 1% 2%;
+}
+
+.colors_2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 2% 2% 2%;
+}
+
+#add_scarlet {
+    background: #FF2300;
+}
+
+#add_orange {
+    background: #FF7B00;
+}
+
+#add_yellow {
+    background: #FFEA00;
+}
+
+#add_lemonlime {
+    background: #CCFF00;
+}
+
+#add_lime {
+    background: #00FF00;
+}
+
+#add_deeppink {
+    background: #FF1493;
+}
+
+#add_darkmagenta {
+    background: #990099;
+}
+
+#add_darkviolet {
+    background: #660099;
+}
+
+#add_blue {
+    background: #0000FF;
+}
+
+#add_darklimegreen {
+    background: #009A00;
+}
+
+.add_button_container {
+    text-align: center;
+    margin: 2%;
+}
+
+.add_button {
+    width: 100%;
+    color: #FFFFFF;
+    font-weight: bold;
+    background: linear-gradient(#617004, #7D9105);
+    border: 0;
+    border-radius: 13px;
+    padding: 2% 4%;
+}
+
+
+/* ADDED COURSES CONTAINER */
+
+.added_courses_container {
+    display: flex;
+    justify-content: center;
+}
+
+.courses_list {
+    width: 100%;
+    padding: 0 5%;
+}
+
+.added_courses {
+    width: 100%;
+    margin-bottom: 10%;
+    border: 1px solid #000;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.course_title {
+    color: #FFF;
+    font-weight: 700;
+    padding: 2px 8px;
+    background: #000;
+}
+
+.course_info {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 8px;
+}
+
+.course_mode_container,
+.course_days_container,
+.course_times_container,
+.course_location_container,
+.course_faculty_container,
+.course_dates_container {
+    display: block;
+    flex-basis: 15%;
+    flex-grow: 1;
+    padding: 5px;
+    margin: 0;
+}
+
+.course_mode_container,
+.course_days_container,
+.course_times_container,
+.course_location_container,
+.course_faculty_container {
+    border-right: 1px dashed #D3D3D3;
+}
+
+.course_room,
+.course_department {
+    margin-top: 5px;
+}
+
+/* CALENDAR */
+
+.calendar_container {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.event_overlay_container {
+    border-spacing: 0;
+    width: 80%;
+    table-layout: fixed;
+    position: relative;
+}
+
+.event_container {
+    width: 80%;
+    position: relative;
+}
+
+.current_month {
+    margin-top: 2%;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.calendar_week {
+    border: 5px solid #7D9105;
+    border-radius: 25px;
+    border-spacing: 0;
+    overflow: hidden;
+    width: 100%;
+    min-width: 800px;
+    table-layout: fixed;
+    position: relative;
+}
+
+.calendar_week thead tr th {
+    background: #7D9105;
+    color: #212602;
+    padding: 1%;
+    overflow: hidden;
+    font-weight: normal;
+    margin: 0;
+}
+
+.calendar_week thead tr th:first-child {
+    border-radius: 19px 0 0 0;
+}
+
+.calendar_week thead tr th:last-child {
+    border-radius: 0 19px 0 0;
+}
+
+.calendar_week thead tr th .date {
+    display: block;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto 5px;
+    padding: 1%;
+    line-height: 1.2;
+}
+
+.active {
+    color: #7D9105;
+    background: #212602;
+}
+
+.calendar_week tbody tr {
+    background: #EDF1DD;
+}
+
+.calendar_week tbody tr:nth-child(odd) {
+    background: #E4E8CA;
+}
+
+.calendar_week tbody tr:nth-child(4n+0) {
+    border-bottom: .5px solid #212602;
+}
+
+.calendar_week tbody tr .quarter_to {
+    border-bottom: .5px solid #212602;
+}
+
+.calendar_week tbody tr td.hour {
+    font-size: 16px;
+    border-bottom: .5px solid #212602;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.event {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.eventTitle {
+    
+}

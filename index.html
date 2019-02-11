@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <style type="text/css">
+    </style>
+    <title>Academic Weekly Schedule</title>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top_left_column">
+            <!-- float container -->
+        </div>
+        <div class="title">
+            <div class="app_title">
+                <h1>Academic Weekly Schedule</h1>
+            </div>
+            <div class="term_title">
+                <!-- <h2 class="term_season">Term Year</h2> -->
+            </div>
+        </div>
+        <div class="add_term_information_container">
+            <form class="update_term_form">
+                <fieldset class="term_input">
+                    <label for="add_term_label" id="term_label">Term:</label>
+                    <input type="text" class="add_term_label" placeholder="e.g., Autumn, Spring">
+                    <label for="add_year_label" id="year_label">Year:</label>
+                    <input type="number" class="term_year_label" min="2019" max="2099" step="1" value="2019">
+                    <label for="current_date_input">Current Date:</label>
+                    <input type="date" class="current_date_input" name="current_date" min="2019-01-01" max="2028-12-31">
+                </fieldset>
+                <fieldset class="update_term_button">
+                    <button type="button" class="term_input_button">Update</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="user_course_container">
+        <div class="add_course_form_container">
+            <form class="add_course_form" id="add_course_form">
+                <h1>Add Course</h1>
+                <section class="section_one">
+                    <h2>Course</h2>
+                    <fieldset class="course_name_fieldset">
+                        <div class="course_name_number_container">
+                            <div class="course_name_container">
+                                <label for="add_course_name" class="course_name_label">Course Name:</label>
+                                <span>
+                  <input type="text" class="add_course_name" required>
+                </span> </div>
+                            <div class="course_number_container">
+                                <label for="add_course_number" class="course_number_label">Course Number:</label>
+                                <span>
+                  <input type="text" class="add_course_number" required>
+                </span> </div>
+                        </div>
+                    </fieldset>
+                </section>
+                <section class="course_details_section">
+                    <h2>Course Details</h2>
+                    <fieldset class="course_details_fieldset">
+                        <div class="faculty_department">
+                            <div class="faculty_container">
+                                <label for="add_faculty_container">Faculty:</label>
+                                <span>
+                  <input type="text" class="add_faculty">
+                </span>
+                            </div>
+                            <div class="department_container">
+                                <label for="add_department">Department:</label>
+                                <span>
+                  <input type="text" class="add_department">
+                </span>
+                            </div>
+                        </div>
+                        <fieldset class="mode_of_instruction_fieldset">
+                            <legend>Mode of Instruction</legend>
+                            <div class="mode_of_instruction_container">
+                                <div class="mode">
+                                    <input type="radio" id="discussion" name="add_mode_of_instruction" value="Discussion" required>
+                                    <label for="discussion">Discussion</label>
+                                </div>
+                                <div class="mode">
+                                    <input type="radio" id="lab" name="add_mode_of_instruction" value="Lab" required>
+                                    <label for="lab">Lab</label>
+                                </div>
+                                <div class="mode">
+                                    <input type="radio" id="lecture" name="add_mode_of_instruction" value="Lecture" required>
+                                    <label for="lecture">Lecture</label>
+                                </div>
+                                <div class="mode">
+                                    <input type="radio" id="online" name="add_mode_of_instruction" value="Online" required>
+                                    <label for="online">Online</label>
+                                </div>
+                            </div>
+                            <div class="other_mode">
+                                <input type="radio" id="other_course_type" name="add_mode_of_instruction" value="Other" required>
+                                <label for="other_course_type">Other:</label>
+                                <span>
+                  <input type="text" id="other_course_type_input" name="add_other_mode" placeholder="Specify">
+                </span>
+                            </div>
+                        </fieldset>
+                    </fieldset>
+                </section>
+                <section class="meeting_information_section">
+                    <h2>Meeting Information</h2>
+                    <fieldset class="meeting_information_fieldset">
+                        <fieldset class="course_dates_fieldset">
+                            <div class="course_duration_container">
+                                <div class="start_date_container">
+                                    <label for="add_start_date">Start Date:</label>
+                                    <span>
+                    <input name="start_date" type="date" class="add_start_date" id="input_start_date" max="2028-12-31" min="2019-01-01">
+                  </span></div>
+                                <div class="end_date_container">
+                                    <label for="add_end_date">End Date:</label>
+                                    <span>
+                    <input name="end_date" type="date" class="add_end_date" id="input_end_date" max="2028-12-31" min="2019-01-01">
+                  </span></div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="day_time_fieldset">
+                            <legend>Day(s)/Time</legend>
+                            <div class="day_time_container">
+                                <div class="add_days">
+                                    <div class="days_container">
+                                        <div class="sunday_container">
+                                            <input type="checkbox" id="sunday" name="add_class_day" value="Su">
+                                            <label for="sunday">Sunday</label>
+                                        </div>
+                                        <div class="monday_container">
+                                            <input type="checkbox" id="monday" name="add_class_day" value="Mo">
+                                            <label for="monday">Monday</label>
+                                        </div>
+                                        <div class="tuesday_container">
+                                            <input type="checkbox" id="tuesday" name="add_class_day" value="Tu">
+                                            <label for="tuesday">Tuesday</label>
+                                        </div>
+                                        <div class="wednesday_container">
+                                            <input type="checkbox" id="wednesday" name="add_class_day" value="We">
+                                            <label for="wednesday">Wednesday</label>
+                                        </div>
+                                        <div class="thursday_container">
+                                            <input type="checkbox" id="thursday" name="add_class_day" value="Th">
+                                            <label for="thursday">Thursday</label>
+                                        </div>
+                                        <div class="friday_container">
+                                            <input type="checkbox" id="friday" name="add_class_day" value="Fr">
+                                            <label for="friday">Friday</label>
+                                        </div>
+                                        <div class="saturday_container">
+                                            <input type="checkbox" id="saturday" name="add_class_day" value="Sa">
+                                            <label for="saturday">Saturday</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add_time">
+                                    <div class="time_container">
+                                        <label for="add_start_time">Start Time:</label>
+                                        <span>
+                      <input name="start_time" type="time" class="add_start_time" max="24:00" min="1:00">
+                    </span>
+                                        <label for="add_end_time">End Time:</label>
+                                        <span>
+                      <input name="start_time" type="time" class="add_end_time" max="24:00" min="1:00">
+                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="location_fieldset">
+                            <legend>Location</legend>
+                            <label for="add_building">Building:</label>
+                            <span>
+                <input type="text" class="add_building">
+              </span>
+                            <label for="add_room">Room:</label>
+                            <span>
+                <input type="text" class="add_room">
+              </span>
+                        </fieldset>
+                    </fieldset>
+                </section>
+                <section class="course_color_section">
+                    <h2>Select Course Color</h2>
+                    <fieldset class="course_color_fieldset">
+                        <div class="colors_container">
+                            <div class="colors_1">
+                                <div class="add_color" id="add_scarlet" value="#FF2400"></div>
+                                <div class="add_color" id="add_orange" value="#FF7B00"></div>
+                                <div class="add_color" id="add_yellow" value="#FFEA00"></div>
+                                <div class="add_color" id="add_lemonlime" value="#CCFF00"></div>
+                                <div class="add_color" id="add_lime" value="#00FF00"></div>
+                            </div>
+                            <div class="colors_2">
+                                <div class="add_color" id="add_deeppink" value="#FF1493"></div>
+                                <div class="add_color" id="add_darkmagenta" value="#990099"></div>
+                                <div class="add_color" id="add_darkviolet" value="#660099"></div>
+                                <div class="add_color" id="add_blue" value="#0000FF"></div>
+                                <div class="add_color" id="add_darklimegreen" value="#009A00"></div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </section>
+                <section class="add_course_button_section">
+                    <div class="add_button_container">
+                        <button class="add_button" type="button">Add Course</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <div class="added_courses_container">
+            <div class="courses_list">
+                <!--
+        <div class="added_courses" id="course_0">
+          <div class="course_title">Number - Name</div>
+          <div class="course_info">
+            <div class="course_mode_container">
+              <div class="course_mode">Mode</div>
+            </div>
+            <div class="course_days_container">
+              <div class="course_days">Days</div>
+            </div>
+            <div class="course_times_container">
+              <div class="course_time">12:00AM - 12:59AM</div>
+            </div>
+            <div class="course_location_container">
+              <div class="course_building">Building</div>
+              <div class="course_room">Room</div>
+            </div>
+            <div class="course_faculty_container">
+              <div class="course_faculty">Faculty</div>
+              <div class="course_department">Department</div>
+            </div>
+            <div class="course_dates_container">
+              <div class="course_dates">Start - End</div>
+            </div>
+          </div>
+
+        </div>
+        -->
+            </div>
+        </div>
+    </div>
+    <div class="calendar_container">
+      <div class="event_overlay_container">
+        <table class="calendar_week">
+            <caption class="current_month" id="calendar_month">Month</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="day_header">
+                        <span class="date" id="date-0"></span>
+                        <span class="weekday_title">Sunday</span>
+                    </th>
+                    <th>
+                        <span class="date" id="date-1"></span>
+                        <span class="weekday_title">Monday</span>
+                    </th>
+                    <th>
+                        <span class="date" id="date-2"></span>
+                        <span class="weekday_title">Tuesday</span>
+                    </th>
+                    <th>
+                        <span class="date" id="date-3"></span>
+                        <span class="weekday_title">Wednesday</span>
+                    </th>
+                    <th>
+                        <span class="date" id="date-4"></span>
+                        <span class="weekday_title">Thursday</span>
+                    </th>
+                    <th>
+                        <span class="date" id="date-5"></span>
+                        <span class="weekday_title">Friday</span>
+                    </th>
+                    <th>
+                        <span class="date" id="date-6"></span>
+                        <span class="weekday_title">Saturday</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr class="bottom_of_hour" id="h0600">
+                    <td class="hour" rowspan="4"><span id="m_0000">6:00 AM</span></td>
+                    <td class="sunday" id="su0600"></td>
+                    <td class="monday" id="mo0600"></td>
+                    <td class="tuesday" id="tu0600"></td>
+                    <td class="wednesday" id="we0600"></td>
+                    <td class="thursday" id="th0600"></td>
+                    <td class="friday" id="fr0600"></td>
+                    <td class="saturday" id="sa0600"></td>
+                </tr>
+                <tr class="quarter_after" id="h0615">
+                    <td class="sunday" id="su0615"></td>
+                    <td class="monday" id="mo0615"></td>
+                    <td class="tuesday" id="tu0615"></td>
+                    <td class="wednesday" id="we0615"></td>
+                    <td class="thursday" id="th0615"></td>
+                    <td class="friday" id="fr0615"></td>
+                    <td class="saturday" id="sa0615"></td>
+                </tr>
+                <tr class="half_hour" id="h0630">
+                    <td class="sunday" id="su0630"></td>
+                    <td class="monday" id="mo0630"></td>
+                    <td class="tuesday" id="tu0630"></td>
+                    <td class="wednesday" id="we0630"></td>
+                    <td class="thursday" id="th0630"></td>
+                    <td class="friday" id="fr0630"></td>
+                    <td class="saturday" id="sa0630"></td>
+                </tr>
+                <tr class="quarter_to" id="h0645">
+                    <td class="sunday quarter_to" id="su0645"></td>
+                    <td class="monday quarter_to" id="mo0645"></td>
+                    <td class="tuesday quarter_to" id="tu0645"></td>
+                    <td class="wednesday quarter_to" id="we0645"></td>
+                    <td class="thursday quarter_to" id="th0645"></td>
+                    <td class="friday quarter_to" id="fr0645"></td>
+                    <td class="saturday quarter_to" id="sa0645"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h0700">
+                    <td class="hour" rowspan="4"><span>7:00 AM</span></td>
+                    <td class="sunday" id="su0700"></td>
+                    <td class="monday" id="mo0700"></td>
+                    <td class="tuesday" id="tu0700"></td>
+                    <td class="wednesday" id="we0700"></td>
+                    <td class="thursday" id="th0700"></td>
+                    <td class="friday" id="fr0700"></td>
+                    <td class="saturday" id="sa0700"></td>
+                </tr>
+                <tr class="quarter_after" id="h0715">
+                    <td class="sunday" id="su0715"></td>
+                    <td class="monday" id="mo0715"></td>
+                    <td class="tuesday" id="tu0715"></td>
+                    <td class="wednesday" id="we0715"></td>
+                    <td class="thursday" id="th0715"></td>
+                    <td class="friday" id="fr0715"></td>
+                    <td class="saturday" id="sa0715"></td>
+                </tr>
+                <tr class="half_hour" id="h0730">
+                    <td class="sunday" id="su0730"></td>
+                    <td class="monday" id="mo0730"></td>
+                    <td class="tuesday" id="tu0730"></td>
+                    <td class="wednesday" id="we0730"></td>
+                    <td class="thursday" id="th0730"></td>
+                    <td class="friday" id="fr0730"></td>
+                    <td class="saturday" id="sa0730"></td>
+                </tr>
+                <tr class="quarter_to" id="h0745">
+                    <td class="sunday quarter_to" id="su0745"></td>
+                    <td class="monday quarter_to" id="mo0745"></td>
+                    <td class="tuesday quarter_to" id="tu0745"></td>
+                    <td class="wednesday quarter_to" id="we0745"></td>
+                    <td class="thursday quarter_to" id="th0745"></td>
+                    <td class="friday quarter_to" id="fr0745"></td>
+                    <td class="saturday quarter_to" id="sa0745"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h0800">
+                    <td class="hour" rowspan="4"><span>8:00 AM</span></td>
+                    <td class="sunday" id="su0800"></td>
+                    <td class="monday" id="mo0800"></td>
+                    <td class="tuesday" id="tu0800"></td>
+                    <td class="wednesday" id="we0800"></td>
+                    <td class="thursday" id="th0800"></td>
+                    <td class="friday" id="fr0800"></td>
+                    <td class="saturday" id="sa0800"></td>
+                </tr>
+                <tr class="quarter_after" id="h0815">
+                    <td class="sunday" id="su0815"></td>
+                    <td class="monday" id="mo0815"></td>
+                    <td class="tuesday" id="tu0815"></td>
+                    <td class="wednesday" id="we0815"></td>
+                    <td class="thursday" id="th0815"></td>
+                    <td class="friday" id="fr0815"></td>
+                    <td class="saturday" id="sa0815"></td>
+                </tr>
+                <tr class="half_hour" id="h0830">
+                    <td class="sunday" id="su0830"></td>
+                    <td class="monday" id="mo0830"></td>
+                    <td class="tuesday" id="tu0830"></td>
+                    <td class="wednesday" id="we0830"></td>
+                    <td class="thursday" id="th0830"></td>
+                    <td class="friday" id="fr0830"></td>
+                    <td class="saturday" id="sa0830"></td>
+                </tr>
+                <tr class="quarter_to" id="h0845">
+                    <td class="sunday quarter_to" id="su0845"></td>
+                    <td class="monday quarter_to" id="mo0845"></td>
+                    <td class="tuesday quarter_to" id="tu0845"></td>
+                    <td class="wednesday quarter_to" id="we0845"></td>
+                    <td class="thursday quarter_to" id="th0845"></td>
+                    <td class="friday quarter_to" id="fr0845"></td>
+                    <td class="saturday quarter_to" id="sa0845"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h0900">
+                    <td class="hour" rowspan="4"><span>9:00 AM</span></td>
+                    <td class="sunday" id="su0900"></td>
+                    <td class="monday" id="mo0900"></td>
+                    <td class="tuesday" id="tu0900"></td>
+                    <td class="wednesday" id="we0900"></td>
+                    <td class="thursday" id="th0900"></td>
+                    <td class="friday" id="fr0900"></td>
+                    <td class="saturday" id="sa0900"></td>
+                </tr>
+                <tr class="quarter_after" id="h0915">
+                    <td class="sunday" id="su0915"></td>
+                    <td class="monday" id="mo0915"></td>
+                    <td class="tuesday" id="tu0915"></td>
+                    <td class="wednesday" id="we0915"></td>
+                    <td class="thursday" id="th0915"></td>
+                    <td class="friday" id="fr0915"></td>
+                    <td class="saturday" id="sa0915"></td>
+                </tr>
+                <tr class="half_hour" id="h0930">
+                    <td class="sunday" id="su0930"></td>
+                    <td class="monday" id="mo0930"></td>
+                    <td class="tuesday" id="tu0930"></td>
+                    <td class="wednesday" id="we0930"></td>
+                    <td class="thursday" id="th0930"></td>
+                    <td class="friday" id="fr0930"></td>
+                    <td class="saturday" id="sa0930"></td>
+                </tr>
+                <tr class="quarter_to" id="h0945">
+                    <td class="sunday quarter_to" id="su0945"></td>
+                    <td class="monday quarter_to" id="mo0945"></td>
+                    <td class="tuesday quarter_to" id="tu0945"></td>
+                    <td class="wednesday quarter_to" id="we0945"></td>
+                    <td class="thursday quarter_to" id="th0945"></td>
+                    <td class="friday quarter_to" id="fr0945"></td>
+                    <td class="saturday quarter_to" id="sa0945"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1000">
+                    <td class="hour" rowspan="4"><span>10:00 AM</span></td>
+                    <td class="sunday" id="su1000"></td>
+                    <td class="monday" id="mo1000"></td>
+                    <td class="tuesday" id="tu1000"></td>
+                    <td class="wednesday" id="we1000"></td>
+                    <td class="thursday" id="th1000"></td>
+                    <td class="friday" id="fr1000"></td>
+                    <td class="saturday" id="sa1000"></td>
+                </tr>
+                <tr class="quarter_after" id="h1015">
+                    <td class="sunday" id="su1015"></td>
+                    <td class="monday" id="mo1015"></td>
+                    <td class="tuesday" id="tu1015"></td>
+                    <td class="wednesday" id="we1015"></td>
+                    <td class="thursday" id="th1015"></td>
+                    <td class="friday" id="fr1015"></td>
+                    <td class="saturday" id="sa1015"></td>
+                </tr>
+                <tr class="half_hour" id="h1030">
+                    <td class="sunday" id="su1030"></td>
+                    <td class="monday" id="mo1030"></td>
+                    <td class="tuesday" id="tu1030"></td>
+                    <td class="wednesday" id="we1030"></td>
+                    <td class="thursday" id="th1030"></td>
+                    <td class="friday" id="fr1030"></td>
+                    <td class="saturday" id="sa1030"></td>
+                </tr>
+                <tr class="quarter_to" id="h1045">
+                    <td class="sunday quarter_to" id="su1045"></td>
+                    <td class="monday quarter_to" id="mo1045"></td>
+                    <td class="tuesday quarter_to" id="tu1045"></td>
+                    <td class="wednesday quarter_to" id="we1045"></td>
+                    <td class="thursday quarter_to" id="th1045"></td>
+                    <td class="friday quarter_to" id="fr1045"></td>
+                    <td class="saturday quarter_to" id="sa1045"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1100">
+                    <td class="hour" rowspan="4"><span>11:00 AM</span></td>
+                    <td class="sunday" id="su1100"></td>
+                    <td class="monday" id="mo1100"></td>
+                    <td class="tuesday" id="tu1100"></td>
+                    <td class="wednesday" id="we1100"></td>
+                    <td class="thursday" id="th1100"></td>
+                    <td class="friday" id="fr1100"></td>
+                    <td class="saturday" id="sa1100"></td>
+                </tr>
+                <tr class="quarter_after" id="h1115">
+                    <td class="sunday" id="su1115"></td>
+                    <td class="monday" id="mo1115"></td>
+                    <td class="tuesday" id="tu1115"></td>
+                    <td class="wednesday" id="we1115"></td>
+                    <td class="thursday" id="th1115"></td>
+                    <td class="friday" id="fr1115"></td>
+                    <td class="saturday" id="sa1115"></td>
+                </tr>
+                <tr class="half_hour" id="h1130">
+                    <td class="sunday" id="su1130"></td>
+                    <td class="monday" id="mo1130"></td>
+                    <td class="tuesday" id="tu1130"></td>
+                    <td class="wednesday" id="we1130"></td>
+                    <td class="thursday" id="th1130"></td>
+                    <td class="friday" id="fr1130"></td>
+                    <td class="saturday" id="sa1130"></td>
+                </tr>
+                <tr class="quarter_to" id="h1145">
+                    <td class="sunday quarter_to" id="su1145"></td>
+                    <td class="monday quarter_to" id="mo1145"></td>
+                    <td class="tuesday quarter_to" id="tu1145"></td>
+                    <td class="wednesday quarter_to" id="we1145"></td>
+                    <td class="thursday quarter_to" id="th1145"></td>
+                    <td class="friday quarter_to" id="fr1145"></td>
+                    <td class="saturday quarter_to" id="sa1145"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1200">
+                    <td class="hour" rowspan="4"><span>12:00 PM</span></td>
+                    <td class="sunday" id="su1200"></td>
+                    <td class="monday" id="mo1200"></td>
+                    <td class="tuesday" id="tu1200"></td>
+                    <td class="wednesday" id="we1200"></td>
+                    <td class="thursday" id="th1200"></td>
+                    <td class="friday" id="fr1200"></td>
+                    <td class="saturday" id="sa1200"></td>
+                </tr>
+                <tr class="quarter_after" id="h1215">
+                    <td class="sunday" id="su1215"></td>
+                    <td class="monday" id="mo1215"></td>
+                    <td class="tuesday" id="tu1215"></td>
+                    <td class="wednesday" id="we1215"></td>
+                    <td class="thursday" id="th1215"></td>
+                    <td class="friday" id="fr1215"></td>
+                    <td class="saturday" id="sa1215"></td>
+                </tr>
+                <tr class="half_hour" id="h1230">
+                    <td class="sunday" id="su1230"></td>
+                    <td class="monday" id="mo1230"></td>
+                    <td class="tuesday" id="tu1230"></td>
+                    <td class="wednesday" id="we1230"></td>
+                    <td class="thursday" id="th1230"></td>
+                    <td class="friday" id="fr1230"></td>
+                    <td class="saturday" id="sa1230"></td>
+                </tr>
+                <tr class="quarter_to" id="h1245">
+                    <td class="sunday quarter_to" id="su1245"></td>
+                    <td class="monday quarter_to" id="mo1245"></td>
+                    <td class="tuesday quarter_to" id="tu1245"></td>
+                    <td class="wednesday quarter_to" id="we1245"></td>
+                    <td class="thursday quarter_to" id="th1245"></td>
+                    <td class="friday quarter_to" id="fr1245"></td>
+                    <td class="saturday quarter_to" id="sa1245"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1300">
+                    <td class="hour" rowspan="4"><span>1:00 PM</span></td>
+                    <td class="sunday" id="su1300"></td>
+                    <td class="monday" id="mo1300"></td>
+                    <td class="tuesday" id="tu1300"></td>
+                    <td class="wednesday" id="we1300"></td>
+                    <td class="thursday" id="th1300"></td>
+                    <td class="friday" id="fr1300"></td>
+                    <td class="saturday" id="sa1300"></td>
+                </tr>
+                <tr class="quarter_after" id="h1315">
+                    <td class="sunday" id="su1315"></td>
+                    <td class="monday" id="mo1315"></td>
+                    <td class="tuesday" id="tu1315"></td>
+                    <td class="wednesday" id="we1315"></td>
+                    <td class="thursday" id="th1315"></td>
+                    <td class="friday" id="fr1315"></td>
+                    <td class="saturday" id="sa1315"></td>
+                </tr>
+                <tr class="half_hour" id="h1330">
+                    <td class="sunday" id="su1330"></td>
+                    <td class="monday" id="mo1330"></td>
+                    <td class="tuesday" id="tu1330"></td>
+                    <td class="wednesday" id="we1330"></td>
+                    <td class="thursday" id="th1330"></td>
+                    <td class="friday" id="fr1330"></td>
+                    <td class="saturday" id="sa1330"></td>
+                </tr>
+                <tr class="quarter_to" id="h1345">
+                    <td class="sunday quarter_to" id="su1345"></td>
+                    <td class="monday quarter_to" id="mo1345"></td>
+                    <td class="tuesday quarter_to" id="tu1345"></td>
+                    <td class="wednesday quarter_to" id="we1345"></td>
+                    <td class="thursday quarter_to" id="th1345"></td>
+                    <td class="friday quarter_to" id="fr1345"></td>
+                    <td class="saturday quarter_to" id="sa1345"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1400">
+                    <td class="hour" rowspan="4"><span>2:00 PM</span></td>
+                    <td class="sunday" id="su1400"></td>
+                    <td class="monday" id="mo1400"></td>
+                    <td class="tuesday" id="tu1400"></td>
+                    <td class="wednesday" id="we1400"></td>
+                    <td class="thursday" id="th1400"></td>
+                    <td class="friday" id="fr1400"></td>
+                    <td class="saturday" id="sa1400"></td>
+                </tr>
+                <tr class="quarter_after" id="h1415">
+                    <td class="sunday" id="su1415"></td>
+                    <td class="monday" id="mo1415"></td>
+                    <td class="tuesday" id="tu1415"></td>
+                    <td class="wednesday" id="we1415"></td>
+                    <td class="thursday" id="th1415"></td>
+                    <td class="friday" id="fr1415"></td>
+                    <td class="saturday" id="sa1415"></td>
+                </tr>
+                <tr class="half_hour" id="h1430">
+                    <td class="sunday" id="su1430"></td>
+                    <td class="monday" id="mo1430"></td>
+                    <td class="tuesday" id="tu1430"></td>
+                    <td class="wednesday" id="we1430"></td>
+                    <td class="thursday" id="th1430"></td>
+                    <td class="friday" id="fr1430"></td>
+                    <td class="saturday" id="sa1430"></td>
+                </tr>
+                <tr class="quarter_to" id="h1445">
+                    <td class="sunday quarter_to" id="su1445"></td>
+                    <td class="monday quarter_to" id="mo1445"></td>
+                    <td class="tuesday quarter_to" id="tu1445"></td>
+                    <td class="wednesday quarter_to" id="we1445"></td>
+                    <td class="thursday quarter_to" id="th1445"></td>
+                    <td class="friday quarter_to" id="fr1445"></td>
+                    <td class="saturday quarter_to" id="sa1445"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1500">
+                    <td class="hour" rowspan="4"><span>3:00 PM</span></td>
+                    <td class="sunday" id="su1500"></td>
+                    <td class="monday" id="mo1500"></td>
+                    <td class="tuesday" id="tu1500"></td>
+                    <td class="wednesday" id="we1500"></td>
+                    <td class="thursday" id="th1500"></td>
+                    <td class="friday" id="fr1500"></td>
+                    <td class="saturday" id="sa1500"></td>
+                </tr>
+                <tr class="quarter_after" id="h1515">
+                    <td class="sunday" id="su1515"></td>
+                    <td class="monday" id="mo1515"></td>
+                    <td class="tuesday" id="tu1515"></td>
+                    <td class="wednesday" id="we1515"></td>
+                    <td class="thursday" id="th1515"></td>
+                    <td class="friday" id="fr1515"></td>
+                    <td class="saturday" id="sa1515"></td>
+                </tr>
+                <tr class="half_hour" id="h1530">
+                    <td class="sunday" id="su1530"></td>
+                    <td class="monday" id="mo1530"></td>
+                    <td class="tuesday" id="tu1530"></td>
+                    <td class="wednesday" id="we1530"></td>
+                    <td class="thursday" id="th1530"></td>
+                    <td class="friday" id="fr1530"></td>
+                    <td class="saturday" id="sa1530"></td>
+                </tr>
+                <tr class="quarter_to" id="h1545">
+                    <td class="sunday quarter_to" id="su1545"></td>
+                    <td class="monday quarter_to" id="mo1545"></td>
+                    <td class="tuesday quarter_to" id="tu1545"></td>
+                    <td class="wednesday quarter_to" id="we1545"></td>
+                    <td class="thursday quarter_to" id="th1545"></td>
+                    <td class="friday quarter_to" id="fr1545"></td>
+                    <td class="saturday quarter_to" id="sa1545"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1600">
+                    <td class="hour" rowspan="4"><span>4:00 PM</span></td>
+                    <td class="sunday" id="su1600"></td>
+                    <td class="monday" id="mo1600"></td>
+                    <td class="tuesday" id="tu1600"></td>
+                    <td class="wednesday" id="we1600"></td>
+                    <td class="thursday" id="th1600"></td>
+                    <td class="friday" id="fr1600"></td>
+                    <td class="saturday" id="sa1600"></td>
+                </tr>
+                <tr class="quarter_after" id="h1615">
+                    <td class="sunday" id="su1615"></td>
+                    <td class="monday" id="mo1615"></td>
+                    <td class="tuesday" id="tu1615"></td>
+                    <td class="wednesday" id="we1615"></td>
+                    <td class="thursday" id="th1615"></td>
+                    <td class="friday" id="fr1615"></td>
+                    <td class="saturday" id="sa1615"></td>
+                </tr>
+                <tr class="half_hour" id="h1630">
+                    <td class="sunday" id="su1630"></td>
+                    <td class="monday" id="mo1630"></td>
+                    <td class="tuesday" id="tu1630"></td>
+                    <td class="wednesday" id="we1630"></td>
+                    <td class="thursday" id="th1630"></td>
+                    <td class="friday" id="fr1630"></td>
+                    <td class="saturday" id="sa1630"></td>
+                </tr>
+                <tr class="quarter_to" id="h1645">
+                    <td class="sunday quarter_to" id="su1645"></td>
+                    <td class="monday quarter_to" id="mo1645"></td>
+                    <td class="tuesday quarter_to" id="tu1645"></td>
+                    <td class="wednesday quarter_to" id="we1645"></td>
+                    <td class="thursday quarter_to" id="th1645"></td>
+                    <td class="friday quarter_to" id="fr1645"></td>
+                    <td class="saturday quarter_to" id="sa1645"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1700">
+                    <td class="hour" rowspan="4"><span>5:00 PM</span></td>
+                    <td class="sunday" id="su1700"></td>
+                    <td class="monday" id="mo1700"></td>
+                    <td class="tuesday" id="tu1700"></td>
+                    <td class="wednesday" id="we1700"></td>
+                    <td class="thursday" id="th1700"></td>
+                    <td class="friday" id="fr1700"></td>
+                    <td class="saturday" id="sa1700"></td>
+                </tr>
+                <tr class="quarter_after" id="h1715">
+                    <td class="sunday" id="su1715"></td>
+                    <td class="monday" id="mo1715"></td>
+                    <td class="tuesday" id="tu1715"></td>
+                    <td class="wednesday" id="we1715"></td>
+                    <td class="thursday" id="th1715"></td>
+                    <td class="friday" id="fr1715"></td>
+                    <td class="saturday" id="sa1715"></td>
+                </tr>
+                <tr class="half_hour" id="h1730">
+                    <td class="sunday" id="su1730"></td>
+                    <td class="monday" id="mo1730"></td>
+                    <td class="tuesday" id="tu1730"></td>
+                    <td class="wednesday" id="we1730"></td>
+                    <td class="thursday" id="th1730"></td>
+                    <td class="friday" id="fr1730"></td>
+                    <td class="saturday" id="sa1730"></td>
+                </tr>
+                <tr class="quarter_to" id="h1745">
+                    <td class="sunday quarter_to" id="su1745"></td>
+                    <td class="monday quarter_to" id="mo1745"></td>
+                    <td class="tuesday quarter_to" id="tu1745"></td>
+                    <td class="wednesday quarter_to" id="we1745"></td>
+                    <td class="thursday quarter_to" id="th1745"></td>
+                    <td class="friday quarter_to" id="fr1745"></td>
+                    <td class="saturday quarter_to" id="sa1745"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1800">
+                    <td class="hour" rowspan="4"><span>6:00 PM</span></td>
+                    <td class="sunday" id="su1800"></td>
+                    <td class="monday" id="mo1800"></td>
+                    <td class="tuesday" id="tu1800"></td>
+                    <td class="wednesday" id="we1800"></td>
+                    <td class="thursday" id="th1800"></td>
+                    <td class="friday" id="fr1800"></td>
+                    <td class="saturday" id="sa1800"></td>
+                </tr>
+                <tr class="quarter_after" id="h1815">
+                    <td class="sunday" id="su1815"></td>
+                    <td class="monday" id="mo1815"></td>
+                    <td class="tuesday" id="tu1815"></td>
+                    <td class="wednesday" id="we1815"></td>
+                    <td class="thursday" id="th1815"></td>
+                    <td class="friday" id="fr1815"></td>
+                    <td class="saturday" id="sa1815"></td>
+                </tr>
+                <tr class="half_hour" id="h1830">
+                    <td class="sunday" id="su1830"></td>
+                    <td class="monday" id="mo1830"></td>
+                    <td class="tuesday" id="tu1830"></td>
+                    <td class="wednesday" id="we1830"></td>
+                    <td class="thursday" id="th1830"></td>
+                    <td class="friday" id="fr1830"></td>
+                    <td class="saturday" id="sa1830"></td>
+                </tr>
+                <tr class="quarter_to" id="h1845">
+                    <td class="sunday quarter_to" id="su1845"></td>
+                    <td class="monday quarter_to" id="mo1845"></td>
+                    <td class="tuesday quarter_to" id="tu1845"></td>
+                    <td class="wednesday quarter_to" id="we1845"></td>
+                    <td class="thursday quarter_to" id="th1845"></td>
+                    <td class="friday quarter_to" id="fr1845"></td>
+                    <td class="saturday quarter_to" id="sa1845"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h1900">
+                    <td class="hour" rowspan="4"><span>7:00 PM</span></td>
+                    <td class="sunday" id="su1900"></td>
+                    <td class="monday" id="mo1900"></td>
+                    <td class="tuesday" id="tu1900"></td>
+                    <td class="wednesday" id="we1900"></td>
+                    <td class="thursday" id="th1900"></td>
+                    <td class="friday" id="fr1900"></td>
+                    <td class="saturday" id="sa1900"></td>
+                </tr>
+                <tr class="quarter_after" id="h1915">
+                    <td class="sunday" id="su1915"></td>
+                    <td class="monday" id="mo1915"></td>
+                    <td class="tuesday" id="tu1915"></td>
+                    <td class="wednesday" id="we1915"></td>
+                    <td class="thursday" id="th1915"></td>
+                    <td class="friday" id="fr1915"></td>
+                    <td class="saturday" id="sa1915"></td>
+                </tr>
+                <tr class="half_hour" id="h1930">
+                    <td class="sunday" id="su1930"></td>
+                    <td class="monday" id="mo1930"></td>
+                    <td class="tuesday" id="tu1930"></td>
+                    <td class="wednesday" id="we1930"></td>
+                    <td class="thursday" id="th1930"></td>
+                    <td class="friday" id="fr1930"></td>
+                    <td class="saturday" id="sa1930"></td>
+                </tr>
+                <tr class="quarter_to" id="h1945">
+                    <td class="sunday quarter_to" id="su1945"></td>
+                    <td class="monday quarter_to" id="mo1945"></td>
+                    <td class="tuesday quarter_to" id="tu1945"></td>
+                    <td class="wednesday quarter_to" id="we1945"></td>
+                    <td class="thursday quarter_to" id="th1945"></td>
+                    <td class="friday quarter_to" id="fr1945"></td>
+                    <td class="saturday quarter_to" id="sa1945"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h2000">
+                    <td class="hour" rowspan="4"><span>8:00 PM</span></td>
+                    <td class="sunday" id="su2000"></td>
+                    <td class="monday" id="mo2000"></td>
+                    <td class="tuesday" id="tu2000"></td>
+                    <td class="wednesday" id="we2000"></td>
+                    <td class="thursday" id="th2000"></td>
+                    <td class="friday" id="fr2000"></td>
+                    <td class="saturday" id="sa2000"></td>
+                </tr>
+                <tr class="quarter_after" id="h2015">
+                    <td class="sunday" id="su2015"></td>
+                    <td class="monday" id="mo2015"></td>
+                    <td class="tuesday" id="tu2015"></td>
+                    <td class="wednesday" id="we2015"></td>
+                    <td class="thursday" id="th2015"></td>
+                    <td class="friday" id="fr2015"></td>
+                    <td class="saturday" id="sa2015"></td>
+                </tr>
+                <tr class="half_hour" id="h2030">
+                    <td class="sunday" id="su2030"></td>
+                    <td class="monday" id="mo2030"></td>
+                    <td class="tuesday" id="tu2030"></td>
+                    <td class="wednesday" id="we2030"></td>
+                    <td class="thursday" id="th2030"></td>
+                    <td class="friday" id="fr2030"></td>
+                    <td class="saturday" id="sa2030"></td>
+                </tr>
+                <tr class="quarter_to" id="h2045">
+                    <td class="sunday quarter_to" id="su2045"></td>
+                    <td class="monday quarter_to" id="mo2045"></td>
+                    <td class="tuesday quarter_to" id="tu2045"></td>
+                    <td class="wednesday quarter_to" id="we2045"></td>
+                    <td class="thursday quarter_to" id="th2045"></td>
+                    <td class="friday quarter_to" id="fr2045"></td>
+                    <td class="saturday quarter_to" id="sa2045"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h2100">
+                    <td class="hour" rowspan="4"><span>9:00 PM</span></td>
+                    <td class="sunday" id="su2100"></td>
+                    <td class="monday" id="mo2100"></td>
+                    <td class="tuesday" id="tu2100"></td>
+                    <td class="wednesday" id="we2100"></td>
+                    <td class="thursday" id="th2100"></td>
+                    <td class="friday" id="fr2100"></td>
+                    <td class="saturday" id="sa2100"></td>
+                </tr>
+                <tr class="quarter_after" id="h2115">
+                    <td class="sunday" id="su2115"></td>
+                    <td class="monday" id="mo2115"></td>
+                    <td class="tuesday" id="tu2115"></td>
+                    <td class="wednesday" id="we2115"></td>
+                    <td class="thursday" id="th2115"></td>
+                    <td class="friday" id="fr2115"></td>
+                    <td class="saturday" id="sa2115"></td>
+                </tr>
+                <tr class="half_hour" id="h2130">
+                    <td class="sunday" id="su2130"></td>
+                    <td class="monday" id="mo2130"></td>
+                    <td class="tuesday" id="tu2130"></td>
+                    <td class="wednesday" id="we2130"></td>
+                    <td class="thursday" id="th2130"></td>
+                    <td class="friday" id="fr2130"></td>
+                    <td class="saturday" id="sa2130"></td>
+                </tr>
+                <tr class="quarter_to" id="h2145">
+                    <td class="sunday quarter_to" id="su2145"></td>
+                    <td class="monday quarter_to" id="mo2145"></td>
+                    <td class="tuesday quarter_to" id="tu2145"></td>
+                    <td class="wednesday quarter_to" id="we2145"></td>
+                    <td class="thursday quarter_to" id="th2145"></td>
+                    <td class="friday quarter_to" id="fr2145"></td>
+                    <td class="saturday quarter_to" id="sa2145"></td>
+                </tr>
+                <tr class="bottom_of_hour" id="h2200">
+                    <td class="hour" rowspan="4"><span>10:00 PM</span></td>
+                    <td class="sunday" id="su2200"></td>
+                    <td class="monday" id="mo2200"></td>
+                    <td class="tuesday" id="tu2200"></td>
+                    <td class="wednesday" id="we2200"></td>
+                    <td class="thursday" id="th2200"></td>
+                    <td class="friday" id="fr2200"></td>
+                    <td class="saturday" id="sa2200"></td>
+                </tr>
+                <tr class="quarter_after" id="h2215">
+                    <td class="sunday" id="su2215"></td>
+                    <td class="monday" id="mo2215"></td>
+                    <td class="tuesday" id="tu2215"></td>
+                    <td class="wednesday" id="we2215"></td>
+                    <td class="thursday" id="th2215"></td>
+                    <td class="friday" id="fr2215"></td>
+                    <td class="saturday" id="sa2215"></td>
+                </tr>
+                <tr class="half_hour" id="h2230">
+                    <td class="sunday" id="su2230"></td>
+                    <td class="monday" id="mo2230"></td>
+                    <td class="tuesday" id="tu2230"></td>
+                    <td class="wednesday" id="we2230"></td>
+                    <td class="thursday" id="th2230"></td>
+                    <td class="friday" id="fr2230"></td>
+                    <td class="saturday" id="sa2230"></td>
+                </tr>
+                <tr class="quarter_to" id="h2245">
+                    <td class="sunday quarter_to" id="su2245"></td>
+                    <td class="monday quarter_to" id="mo2245"></td>
+                    <td class="tuesday quarter_to" id="tu2245"></td>
+                    <td class="wednesday quarter_to" id="we2245"></td>
+                    <td class="thursday quarter_to" id="th2245"></td>
+                    <td class="friday quarter_to" id="fr2245"></td>
+                    <td class="saturday quarter_to" id="sa2245"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="event_container">
+        <!-- <div class="event_%id%">
+          <div class="event_number">%Number%</div>
+          <div class="event_name">%Name%</div>
+        </div> -->
+      </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
